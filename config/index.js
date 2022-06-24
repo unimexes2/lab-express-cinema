@@ -25,6 +25,7 @@ module.exports = (app) => {
   // To have access to `body` property in the request
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
+
   app.use(cookieParser());
 
   // Normalizes the path to the views folder
@@ -36,4 +37,6 @@ module.exports = (app) => {
 
   // Handles access to the favicon
   app.use(favicon(path.join(__dirname, "..", "public", "images", "favicon.ico")));
+
+  
 };
