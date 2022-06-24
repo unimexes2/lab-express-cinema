@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/stylesheets/styles.css">
+<div class="flex">
+{{#each response}}
+
+
+<div>
+    <div>
+        <img src="{{this.image}}" alt="beer" width="150px" height="200px">
+    </div>
+    <div class="description">
+    
+      <h4>"{{this.title}}"></h4><h4> {{this.dirctor}}</h4>
+    
+        <br>
+        <p> {{this.stars}}</p>
+        <br>
+        <p> {{this.showtimes}}</p>
+        <br>
+    </div>
+</div>
+
+{{/each}}
+</div>
+
+
+

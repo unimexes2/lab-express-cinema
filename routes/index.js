@@ -1,22 +1,23 @@
 const router = require("express").Router();
-const Pokemon = require("../models/Movie.model");
+const Movie = require("../db/index");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
   
   debugger
   console.log(res)
-  let title="hghbk"
+  let title="Cinema Ironhack"
   res.render("index",{title});
 });
 
-router.get("/pokemons", (req, res, next) => {
+router.get("/movies", (req, res, next) => {
   // buscar los nombres de los pokemon de mi BD
   // buscamos en la DB los documentos de la coleción de pokemons
-  Pokemon.find()
+  debugger
+  Movie.find()
     .then((response) => {
       console.log(response);
-      res.render("pokemon-list.hbs", { response });
+      res.render("movies.hbs", { response });
     })
     .catch((err) => {
       next(err);
@@ -24,7 +25,7 @@ router.get("/pokemons", (req, res, next) => {
 
   // mostrar una vista a el cliente con los nombres de pokemons
 });
-
+/*
 router.get("/pokemons/:id", (req, res, next) => {
   // aplicar destructuracion sobre req.params
 
@@ -55,5 +56,5 @@ router.get("/poke-search", (req, res, next) => {
       next(err);
     });
 });
-
+*/
 module.exports = router;
