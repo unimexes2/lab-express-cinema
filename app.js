@@ -8,12 +8,15 @@ require('./db');
 // Handles http requests (express is node js framework)
 // https://www.npmjs.com/package/express
 const express = require('express');
-
 // Handles the handlebars
 // https://www.npmjs.com/package/hbs
 const hbs = require('hbs');
 
 const app = express();
+
+const movieModelObj = require("./models/Movie.model");
+const Movie=movieModelObj[0];
+const mongoose=movieModelObj[1];
 
 // ℹ️ This function is getting exported from the config folder. It runs most middlewares
 require('./config')(app);
