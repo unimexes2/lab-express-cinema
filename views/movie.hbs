@@ -1,14 +1,22 @@
 <div>
     <div>
-        <img src="{{response.image}}" alt="movie" width="150px" height="200px">
+        <img src="{{response.image}}" alt="movie" width="200px" height="300px">
     </div>
     <div class="description">
     
-      <h4>"{{response.title}}"</h4><h4> {{response.dirctor}}</h4>
+      <h4>TITLE {{response.title}}</h4>
+      <h4> Director:</h4>
+      <h4>{{response.director}}</h4>
     
         <br>
-        <p> {{response.stars}}</p>
+        <h5>Stars</h5>
+<ul>
+{{#each response.stars}}
+        <li>  {{this}}</li>
+{{/each}}
+</ul>       
         <br>
+        <p> {{response.description}}</p>
         <p> {{response.showtimes}}</p>
         <br>
     </div>

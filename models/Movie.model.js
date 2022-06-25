@@ -10,8 +10,8 @@ const moviesSchema = new mongoose.Schema({
   director: {
     type: String,
     required: true, // este elemento es obligatorio, si no, error!
-     },
-    
+  },
+
   stars: [
     {
       type: String,
@@ -23,13 +23,13 @@ const moviesSchema = new mongoose.Schema({
   image: {
     type: String,
     required: true, // este elemento es obligatorio, si no, error!
-     },
+  },
 
-     descrription: {
-        type: String,
-       // este elemento es obligatorio, si no, error!
-         },
-  
+  description: {
+    type: String,
+    // este elemento es obligatorio, si no, error!
+  },
+
   showtimes: [
     {
       type: String,
@@ -39,8 +39,8 @@ const moviesSchema = new mongoose.Schema({
 });
 
 // crear el Model
-const MoviesModel = mongoose.model("movie", moviesSchema );
+const MoviesModel = mongoose.model("movie", moviesSchema);
 // mongoose.model(nombreDelModelo, schemaDelModelo)
 // "student" indica como se llamara nuestra colección => "students"
 
-module.exports = [MoviesModel,mongoose];
+module.exports = [MoviesModel, mongoose];
